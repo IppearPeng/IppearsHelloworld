@@ -2,7 +2,7 @@
 """
 Created on Wed Dec 20 15:43:59 2023
 
-@author: CancerDelta
+@author: IppearPeng
 """
 
 import threading
