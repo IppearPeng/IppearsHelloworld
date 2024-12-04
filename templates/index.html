@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submit-button').click(function(event) {
+                event.preventDefault(); // 阻止默认按钮行为
+                $.ajax({
+                    type: 'POST',
+                    url: '/process',
+                    data: { data: $('#input-field').val() },
+                    success: function(response) {
+                        // 处理成功响应
+                        $('#result').text(response.result);
+                    },
+                    error: function() {
+                        // 处理错误
+                        alert('Error in processing your request.');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Flask AJAX 示例</h1>
+    <input type="text" id="input-field" placeholder="输入一些数据" />
+    <button id="submit-button">提交</button>
+    <p id="result"></p>
+</body>
+</html>
