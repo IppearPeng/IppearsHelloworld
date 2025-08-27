@@ -15,3 +15,5 @@ size=np.linspace(1,110,num=219)
 qhd=ppi(2560,1440,size)
 
 plt.plot(size,qhd)
+
+#push test
